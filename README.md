@@ -2,7 +2,18 @@
 
 Open and available on Github Linter rules project.
 
-# Installation
+# Using in project
+
+Create file `pyproject.toml` with content:
+
+```toml
+[tool.flakeheaven]
+base = "https://raw.githubusercontent.com/aptakhin/linter/main/pyproject.toml"
+```
+
+Everything below will override base rules.
+
+## Installation
 
 Flake plugin dependencies for `pipenv`:
 
@@ -13,14 +24,13 @@ flake8-commas = "==2.1."
 flakeheaven = "==3.1.0"
 importlib-metadata = "<5.0"  # Fixes: https://stackoverflow.com/a/73932581
 ```
+# Running
 
 For start, can run with empty baseline, but file need to be exist.
 
 ```bash
 touch .baseline
 ```
-
-# Running
 
 Run linter:
 
@@ -58,6 +68,8 @@ Install VS Code extension: https://marketplace.visualstudio.com/items?itemName=m
 Pre-release extension (for 01.11.2022 release is unavailable yet).
 
 `flake8heavened` - special version of compatible to flake8 binary `flakeheaven`.
+
+Configure extension settings:
 
 - _Flake8: ArgsSet_: `--relative`, it shows to treat absolute paths relative to baseline. Otherwise `flake8heavened` will ignore our baseline (and config).
 - _Flake8: Import Strategy_: `fromEnvironment`
