@@ -2,7 +2,7 @@
 
 baseline = ".baseline"
 
-format = "grouped"
+format = "colored"  # Colored output and easily can go to file:line 
 
 show_source = true
 
