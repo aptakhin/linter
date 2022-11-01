@@ -1,0 +1,30 @@
+[tool.flakeheaven]
+
+baseline = ".baseline"
+
+format = "grouped"
+
+show_source = true
+
+# list of plugins and rules for them
+[tool.flakeheaven.plugins]
+pyflakes = [
+    "+*",
+]
+
+pycodestyle = [
+    "+*", 
+    "-W291",  # trailing whitespace
+    "-W293",  # blank line contains whitespace
+    
+    "-E127",  # continuation line over-indented for visual indent
+    "-E128",  # continuation line under-indented for visual indent
+    "-E261",  # at least two spaces before inline comment
+    "-E302",  # expected 2 blank lines, found 1
+    "-E303",  # too many blank lines
+    "-E501",  # line too long (... > 90 characters)
+]
+
+commas = [
+    "+*", 
+]
